@@ -24,7 +24,7 @@ namespace ReactApp1.Server.Controllers
                 LoadStudents();
             }
 
-            return Enumerable.Range(0, 100).Select(index => new Student
+            return Enumerable.Range(0, 5).Select(index => new Student
             {
                 Id = _students[index].Id,
                 DBN = _students[index].DBN,
@@ -42,6 +42,7 @@ namespace ReactApp1.Server.Controllers
 
             var file = File(stream, "text/csv");
             _students = new List<Student>();
+            double mean = 0;
 
             using (StreamReader sr = new StreamReader(file.FileStream))
             {
@@ -52,8 +53,7 @@ namespace ReactApp1.Server.Controllers
                     if (line != null)
                     {
                         var splitLine = line.Split(',');
-
-                        _students.Add(new Student
+                        var student = new Student
                         {
                             Id = Guid.NewGuid().ToString(),
                             DBN = splitLine[0],
@@ -62,10 +62,16 @@ namespace ReactApp1.Server.Controllers
                             Absent = splitLine[3],
                             Present = splitLine[4],
                             Released = splitLine[5],
-                        });
+                        };
+
+                        mean += Convert.ToDouble(student.Enrolled);
+
+                        _students.Add(student);
                     }
                 }
             }
+
+            mean /= _students.Count;
         }
 
     }
