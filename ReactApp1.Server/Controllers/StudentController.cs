@@ -51,17 +51,17 @@ namespace ReactApp1.Server.Controllers
                     var line = sr.ReadLine();
                     if (line != null)
                     {
-                        var l = line.Split(',');
+                        var splitLine = line.Split(',');
 
                         _students.Add(new Student
                         {
                             Id = Guid.NewGuid().ToString(),
-                            DBN = l[0],
-                            Date = l[1],
-                            Enrolled = l[2],
-                            Absent = l[3],
-                            Present = l[4],
-                            Released = l[5],
+                            DBN = splitLine[0],
+                            Date = splitLine[1],
+                            Enrolled = splitLine[2],
+                            Absent = splitLine[3],
+                            Present = splitLine[4],
+                            Released = splitLine[5],
                         });
                     }
                 }
