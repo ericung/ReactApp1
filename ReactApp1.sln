@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactApp1.Server", "ReactApp1.Server\ReactApp1.Server.csproj", "{4B1030B5-FEF2-4A2D-9564-11CB116F1D87}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactapp1.client", "reactapp1.client\reactapp1.client.esproj", "{BC7D1692-138E-441C-817C-04AE8A41483C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{F9361DDC-797F-4668-B675-8F31B37175C9}"
+	ProjectSection(SolutionItems) = preProject
+		Data\2018-2019_Daily_Attendance_20240429.csv = Data\2018-2019_Daily_Attendance_20240429.csv
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B1030B5-FEF2-4A2D-9564-11CB116F1D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B1030B5-FEF2-4A2D-9564-11CB116F1D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B1030B5-FEF2-4A2D-9564-11CB116F1D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B1030B5-FEF2-4A2D-9564-11CB116F1D87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7D1692-138E-441C-817C-04AE8A41483C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7D1692-138E-441C-817C-04AE8A41483C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7D1692-138E-441C-817C-04AE8A41483C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BC7D1692-138E-441C-817C-04AE8A41483C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7D1692-138E-441C-817C-04AE8A41483C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC7D1692-138E-441C-817C-04AE8A41483C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70626475-9498-4338-B89C-6831FC8020E7}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+@ReactApp1.Server_HostAddress = http://localhost:5251
+
+GET {{ReactApp1.Server_HostAddress}}/student/
+Accept: application/json
+
+###
