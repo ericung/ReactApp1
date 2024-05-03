@@ -5,12 +5,12 @@ import './App.css';
 function Profile({ name }) {
     return (
         <>
-            <h1> {name} <img
+            <h3> {name} <img
                 src="https://th.bing.com/th/id/R.b8b237b649495e4f40809e688f3d42d8?rik=tI0%2bbvO1PUVHpg&riu=http%3a%2f%2fpixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com%2fimage%2fba79ccaf05eaf17.png&ehk=Am57ejsedPsZBAjirb1YceWmxJjnatK%2bIQNJQGRmd6I%3d&risl=&pid=ImgRaw&r=0"
                 width="60"
                 height="60"
                 alt="cat"
-            /> </h1>
+            /> </h3>
         </>
     );
 }
@@ -22,7 +22,7 @@ Profile.propTypes = {
 function ProfileLine() {
     return (
         <section>
-            <h1>Hello Kitty</h1>
+            <h1>Proptypes</h1>
             <section>
                 <Profile name="1"/>
             </section>
