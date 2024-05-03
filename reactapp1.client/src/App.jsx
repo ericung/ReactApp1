@@ -1,29 +1,36 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
 
-function Profile() {
+function Profile({ name }) {
     return (
-        <img
-            src="https://th.bing.com/th/id/R.b8b237b649495e4f40809e688f3d42d8?rik=tI0%2bbvO1PUVHpg&riu=http%3a%2f%2fpixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com%2fimage%2fba79ccaf05eaf17.png&ehk=Am57ejsedPsZBAjirb1YceWmxJjnatK%2bIQNJQGRmd6I%3d&risl=&pid=ImgRaw&r=0"
-            width="100"
-            height="100"
-            alt="cat"
-        />
+        <>
+            <h1> {name} <img
+                src="https://th.bing.com/th/id/R.b8b237b649495e4f40809e688f3d42d8?rik=tI0%2bbvO1PUVHpg&riu=http%3a%2f%2fpixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com%2fimage%2fba79ccaf05eaf17.png&ehk=Am57ejsedPsZBAjirb1YceWmxJjnatK%2bIQNJQGRmd6I%3d&risl=&pid=ImgRaw&r=0"
+                width="60"
+                height="60"
+                alt="cat"
+            /> </h1>
+        </>
     );
 }
+Profile.propTypes = {
+    name: PropTypes.string.isRequired
+}
+
 
 function ProfileLine() {
     return (
         <section>
             <h1>Hello Kitty</h1>
             <section>
-                <Profile />
+                <Profile name="1"/>
             </section>
             <section>
-                <Profile />
+                <Profile name="2"/>
             </section>
             <section>
-                <Profile />
+                <Profile name="3"/>
             </section>
         </section>
     );
