@@ -16,7 +16,7 @@ regular functional programming functions can be found in intermediate state data
   );
 ```
    
-1. map
+2. map
 
 ``` js
    {artworks.map(artwork => (
