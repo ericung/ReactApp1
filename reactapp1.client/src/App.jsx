@@ -8,7 +8,6 @@ function EditProfile() {
     const [lastName, setLastName] = useState(' ');
     const [edit, setEdit] = useState(false);
 
-    // Fragment
     function Edit() {
         if (edit)
             return (
@@ -24,32 +23,49 @@ function EditProfile() {
             )
     }
 
+<<<<<<< HEAD
+    function FirstName() {
+        return (
+=======
     return (
-        <form onSubmit={e => { e.preventDefault(); setEdit(!edit); }}>
+        <form onSubmit={e => { e.stopPropagation(); setEdit(!edit); }}>
+>>>>>>> parent of 7946ee7 (i /i)
             <label>
                 First name:{' '}
                 {
-                    (edit) ? 
+                    (edit) ?
                         (
                             <input value={firstName} onChange={e => setFirstName(e.target.value)} />
-                        ):
+                        ) :
                         (
-                            <i>{firstName}</i>
+                            <b>{firstName} </b>
                         )
                 }
             </label>
+        );
+    }
+
+    function LastName() {
+        return (
             <label>
                 Last name:{' '}
                 {
-                    (edit) ? 
+                    (edit) ?
                         (
                             <input value={lastName} onChange={e => setLastName(e.target.value)} />
-                        ):
+                        ) :
                         (
-                            <i>{lastName}</i>
+                            <b>{lastName} </b>
                         )
                 }
             </label>
+        );
+    }
+
+    return (
+        <form onSubmit={e => { e.preventDefault(); setEdit(!edit); }}>
+            <FirstName/>
+            <LastName/>
             <Edit />
             <p><i>Hello, {firstName} {lastName} !</i></p>
         </form>
@@ -74,7 +90,6 @@ Profile.propTypes = {
 }
 
 
-// template 
 function ProfileLine() {
     return (
         <section>
