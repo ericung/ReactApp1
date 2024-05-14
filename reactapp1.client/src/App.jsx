@@ -22,17 +22,53 @@ function EditProfile() {
         if (edit)
             return (
                 <button type="submit" onClick={onEditClick}>
-                    Edit Profile
+                    Save Profile
                 </button>
             )
         else    
             return (
                 <button type="submit" onClick={onEditClick}>
-                    Save Profile
+                    Edit Profile
                 </button>
             )
     }
 
+    function FirstName() {
+        if (edit) {
+            return (
+                <label>
+                    First name:{firstName}
+                    <input placeholder={firstName} onChange={firstNameOnChange} />
+                </label>
+            );
+        }
+        else {
+            return (
+                <label>
+                    First name:{firstName}
+                    <b>{firstName}</b>
+                </label>
+            );
+        }
+    }
+    function LastName() {
+        if (edit) {
+            return (
+                <label>
+                    First name:{lastName}
+                    <input placeholder={lastName} onChange={lastNameOnChange} />
+                </label>
+            );
+        }
+        else {
+            return (
+                <label>
+                    First name:{lastName}
+                    <b>{lastName}</b>
+                </label>
+            );
+        }
+    }
     function firstNameOnChange(e) {
         setFirstName(e.target.value);
     }
@@ -43,16 +79,8 @@ function EditProfile() {
 
     return (
         <form>
-            <label>
-                First name:{firstName}
-                <b>Jane</b>
-                <input placeholder={firstName} onChange={firstNameOnChange} />
-            </label>
-            <label>
-                Last name:{lastName}
-                <b>Jacobs</b>
-                <input placeholder={lastName} onChange={lastNameOnChange} />
-            </label>
+            <FirstName />
+            <LastName />
             <Edit />
             <p><i>Hello, {firstName} {lastName} !</i></p>
         </form>
