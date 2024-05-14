@@ -4,7 +4,7 @@ Data can be found here: [School Student Daily Attendence](https://www.kaggle.com
 
 There is an issue with components and conditional rendering in relation to how to handle elements and values in components.
 
-regular functional programming function can be found in intermediate state data transformations
+regular functional programming functions can be found in intermediate state data transformations
 
 1. filter
 2. map
