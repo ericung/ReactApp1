@@ -9,6 +9,8 @@ function EditProfile() {
     const [edit, setEdit] = useState(false);
 
     // Fragment
+    // The reason why the Edit button can be placed in a component is because
+    // it doesn't have any values that need to be changed.
     function Edit() {
         if (edit)
             return (
@@ -23,9 +25,11 @@ function EditProfile() {
                 </button>
             )
     }
-
-    function FirstName() {
-        return (
+    
+    // The values in the label for first and last name changes which needs to be
+    // rerendered within the main form branch.
+    return (
+        <form onSubmit={e => { e.preventDefault(); setEdit(!edit); }}>
             <label>
                 First name:{' '}
                 {
@@ -38,11 +42,6 @@ function EditProfile() {
                         )
                 }
             </label>
-        );
-    }
-
-    function LastName() {
-        return (
             <label>
                 Last name:{' '}
                 {
@@ -55,13 +54,6 @@ function EditProfile() {
                         )
                 }
             </label>
-        );
-    }
-
-    return (
-        <form onSubmit={e => { e.preventDefault(); setEdit(!edit); }}>
-            <FirstName/>
-            <LastName/>
             <Edit />
             <p><i>Hello, {firstName} {lastName} !</i></p>
         </form>
