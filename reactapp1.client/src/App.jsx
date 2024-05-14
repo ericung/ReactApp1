@@ -24,32 +24,44 @@ function EditProfile() {
             )
     }
 
-    return (
-        <form onSubmit={e => { e.preventDefault(); setEdit(!edit); }}>
+    function FirstName() {
+        return (
             <label>
                 First name:{' '}
                 {
-                    (edit) ? 
+                    (edit) ?
                         (
                             <input value={firstName} onChange={e => setFirstName(e.target.value)} />
-                        ):
+                        ) :
                         (
                             <i>{firstName}</i>
                         )
                 }
             </label>
+        );
+    }
+
+    function LastName() {
+        return (
             <label>
                 Last name:{' '}
                 {
-                    (edit) ? 
+                    (edit) ?
                         (
                             <input value={lastName} onChange={e => setLastName(e.target.value)} />
-                        ):
+                        ) :
                         (
                             <i>{lastName}</i>
                         )
                 }
             </label>
+        );
+    }
+
+    return (
+        <form onSubmit={e => { e.preventDefault(); setEdit(!edit); }}>
+            <FirstName/>
+            <LastName/>
             <Edit />
             <p><i>Hello, {firstName} {lastName} !</i></p>
         </form>
