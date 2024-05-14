@@ -3,6 +3,53 @@ import { useImmer } from 'use-immer';
 import PropTypes from 'prop-types';
 import './App.css';
 
+function EditProfile() {
+    const [edit, setEdit] = useState(0);
+
+    function onEditClick(e) {
+        e.stopPropagation();
+        if (edit == true) {
+            setEdit(false);
+        }
+        else {
+            setEdit(true);
+        }
+    }
+
+    function Edit() {
+        if (edit)
+            return (
+                <button type="submit" onClick={onEditClick}>
+                    Edit Profile
+                </button>
+            )
+        else    
+            return (
+                <button type="submit" onClick={onEditClick}>
+                    Save Profile
+                </button>
+            )
+    }
+
+    return (
+        <form>
+            <label>
+                First name:{' '}
+                <b>Jane</b>
+                <input />
+            </label>
+            <label>
+                Last name:{' '}
+                <b>Jacobs</b>
+                <input />
+            </label>
+            <Edit />
+            <p><i>Hello, Jane Jacobs!</i></p>
+        </form>
+    );
+}
+
+
 function Profile({ name }) {
     return (
         <>
@@ -73,7 +120,8 @@ function App() {
 
     return (
         <div>
-            <ProfileLine/>
+            <EditProfile />
+            <ProfileLine />
             <h1 id="tabelLabel">Student student</h1>
             <p>This component demonstrates fetching data from the server.</p>
             {contents}
