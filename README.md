@@ -4,6 +4,8 @@ Data can be found here: [School Student Daily Attendence](https://www.kaggle.com
 
 There is an issue with components and conditional rendering in relation to how to handle elements and values in components.
 
+[commit](https://github.com/ericung/ReactApp1/commit/894e82481d93270f82b99d37810a08de9ef55142)
+
 regular functional programming functions can be found in intermediate state data transformations
 
 1. filter
