@@ -7,11 +7,14 @@ There is an issue with components and conditional rendering in relation to how t
 regular functional programming functions can be found in intermediate state data transformations
 
 1. filter
+   
    const chemists = people.filter(person =>
     person.profession === 'chemist'
   );
-3. map
-  {artworks.map(artwork => (
+   
+2. map
+
+   {artworks.map(artwork => (
         <li key={artwork.id}>
           <label>
             <input
@@ -28,7 +31,9 @@ regular functional programming functions can be found in intermediate state data
           </label>
         </li>
       ))}
-4. find
+   
+3. find
+ 
   const artwork = draft.find(a =>
         a.id === artworkId
       );
