@@ -6,81 +6,49 @@ import './App.css';
 function EditProfile() {
     const [firstName, setFirstName] = useState(' ');
     const [lastName, setLastName] = useState(' ');
-    const [edit, setEdit] = useState(0);
-
-    function onEditClick(e) {
-        e.stopPropagation();
-        if (edit == true) {
-            setEdit(false);
-        }
-        else {
-            setEdit(true);
-        }
-    }
+    const [edit, setEdit] = useState(false);
 
     function Edit() {
         if (edit)
             return (
-                <button type="submit" onClick={onEditClick}>
+                <button type="submit" >
                     Save Profile
                 </button>
             )
         else    
             return (
-                <button type="submit" onClick={onEditClick}>
+                <button type="submit">
                     Edit Profile
                 </button>
             )
     }
 
-    function FirstName() {
-        if (edit) {
-            return (
-                <label>
-                    First name:{firstName}
-                    <input placeholder={firstName} onChange={firstNameOnChange} />
-                </label>
-            );
-        }
-        else {
-            return (
-                <label>
-                    First name:{firstName}
-                    <b>{firstName}</b>
-                </label>
-            );
-        }
-    }
-    function LastName() {
-        if (edit) {
-            return (
-                <label>
-                    First name:{lastName}
-                    <input placeholder={lastName} onChange={lastNameOnChange} />
-                </label>
-            );
-        }
-        else {
-            return (
-                <label>
-                    First name:{lastName}
-                    <b>{lastName}</b>
-                </label>
-            );
-        }
-    }
-    function firstNameOnChange(e) {
-        setFirstName(e.target.value);
-    }
-
-    function lastNameOnChange(e) {
-        setLastName(e.target.value);
-    }
-
     return (
-        <form>
-            <FirstName />
-            <LastName />
+        <form onSubmit={e => { e.stopPropagation(); setEdit(!edit); }}>
+            <label>
+                First name:{' '}
+                {
+                    (edit) ? 
+                        (
+                            <input value={firstName} onChange={e => setFirstName(e.target.value)} />
+                        ):
+                        (
+                            <b>{firstName} </b>
+                        )
+                }
+            </label>
+            <label>
+                Last name:{' '}
+                {
+                    (edit) ? 
+                        (
+                            <input value={lastName} onChange={e => setLastName(e.target.value)} />
+                        ):
+                        (
+                            <b>{lastName} </b>
+                        )
+                }
+            </label>
             <Edit />
             <p><i>Hello, {firstName} {lastName} !</i></p>
         </form>
