@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 function EditProfile() {
+    const [firstName, setFirstName] = useState(' ');
+    const [lastName, setLastName] = useState(' ');
     const [edit, setEdit] = useState(0);
 
     function onEditClick(e) {
@@ -31,20 +33,28 @@ function EditProfile() {
             )
     }
 
+    function firstNameOnChange(e) {
+        setFirstName(e.target.value);
+    }
+
+    function lastNameOnChange(e) {
+        setLastName(e.target.value);
+    }
+
     return (
         <form>
             <label>
-                First name:{' '}
+                First name:{firstName}
                 <b>Jane</b>
-                <input />
+                <input placeholder={firstName} onChange={firstNameOnChange} />
             </label>
             <label>
-                Last name:{' '}
+                Last name:{lastName}
                 <b>Jacobs</b>
-                <input />
+                <input placeholder={lastName} onChange={lastNameOnChange} />
             </label>
             <Edit />
-            <p><i>Hello, Jane Jacobs!</i></p>
+            <p><i>Hello, {firstName} {lastName} !</i></p>
         </form>
     );
 }
