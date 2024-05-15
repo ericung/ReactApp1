@@ -25,11 +25,9 @@ function EditProfile() {
                 </button>
             )
     }
-    
-    // The values in the label for first and last name changes which needs to be
-    // rerendered within the main form branch.
-    return (
-        <form onSubmit={e => { e.preventDefault(); setEdit(!edit); }}>
+
+    function FirstName({ firstName }) {
+        return (
             <label>
                 First name:{' '}
                 {
@@ -42,7 +40,18 @@ function EditProfile() {
                         )
                 }
             </label>
-            <label>
+        );
+    }
+    FirstName.propTypes = {
+        firstName: PropTypes.string.isRequired
+    }
+    
+    // The values in the label for first and last name changes which needs to be
+    // rerendered within the main form branch.
+    return (
+        <form onSubmit={e => { e.preventDefault(); setEdit(!edit); }}>
+            <FirstName firstName={firstName}/>
+           <label>
                 Last name:{' '}
                 {
                     (edit) ?

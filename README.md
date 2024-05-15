@@ -45,3 +45,6 @@ regular functional programming functions can be found in intermediate state data
         a.id === artworkId
       );
 ```
+
+find and filter are quotient operations on a topological space
+
