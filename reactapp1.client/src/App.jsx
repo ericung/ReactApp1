@@ -3,6 +3,62 @@ import { useImmer } from 'use-immer';
 import PropTypes from 'prop-types';
 import './App.css';
 
+// Idea for the generator design pattern
+// Start with initial states
+// Functions for generating
+// Render Function
+// main function
+// TODO: use react
+function FibonacciState() {
+    const [stateX, setStateX] = useState('a');
+    const [stateY, setStateY] = useState('b');
+    const [stateZ, setStateZ] = useState('');
+    const [state, setState] = useState('Z');
+
+    function stateXGenerator() {
+        setStateX(stateY + stateZ);
+        setState('Y');
+    }
+
+    function stateYGenerator() {
+        setStateY(stateZ + stateX);
+        setState('Z');
+    }
+
+    function stateZGenerator() {
+        setStateZ(stateX + stateY);
+        setState('X');
+    }
+
+    function Generate() {
+        switch (state) {
+            case 'X': stateXGenerator(); break;
+            case 'Y': stateYGenerator(); break;
+            case 'Z': stateZGenerator(); break;
+        }
+    }
+
+    function Render() {
+        switch (state) {
+            case 'X': return (<textarea value={stateX}></textarea>)
+            case 'Y': return (<textarea value={stateY}></textarea>)
+            case 'Z': return (<textarea value={stateZ}></textarea>)
+        }
+    }
+
+    return (
+        <div>
+            <button type="submit" onClick={Generate}>
+                Generate
+            </button>
+            {
+                Render()
+            }
+        </div>
+    );
+}
+
+
 function EditProfile() {
     const [firstName, setFirstName] = useState(' ');
     const [lastName, setLastName] = useState(' ');
@@ -141,6 +197,7 @@ function App() {
 
     return (
         <div>
+            <FibonacciState />
             <EditProfile />
             <ProfileLine />
             <h1 id="tabelLabel">Student student</h1>
