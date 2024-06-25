@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 // Idea for the generator design pattern
-// Start with initial states
-// Functions for generating
-// Render Function
-// main function
-// TODO: use react
+// Start with state version and state generator variables
+// Functions for generating for each generator variable
+// Render Function based on state version
+// main function to render the values appropriately
+// TODO: investigate reduction
 function FibonacciState() {
     const [stateX, setStateX] = useState('a');
     const [stateY, setStateY] = useState('b');
