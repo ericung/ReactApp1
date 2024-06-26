@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 // The redux version of the generator design pattern
+// WIP
 export const fibonacciSlice = createSlice({
     name: 'counter',
     initialState: {
