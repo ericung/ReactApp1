@@ -1,7 +1,29 @@
 import { useEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux'
+import { generate } from './FibonacciSlice'
 import './App.css';
+
+export function FibonacciRedux() {
+    const value = useSelector((state) => state.fibonacci.V)
+    const dispatch = useDispatch()
+
+    return (
+        <div>
+            <div>
+                <button
+                    aria-label="generate"
+                    onClick={() => dispatch(generate())}
+                >
+                    Generate Redux
+                </button>
+                <textarea value={value}></textarea>
+            </div>
+        </div>
+    )
+}
+
 
 // Idea for the generator design pattern
 // Start with state version and state generator variables
@@ -197,6 +219,7 @@ function App() {
 
     return (
         <div>
+            <FibonacciRedux />
             <FibonacciState />
             <EditProfile />
             <ProfileLine />
