@@ -48,3 +48,42 @@ regular functional programming functions can be found in intermediate state data
 
 find and filter are quotient operations on a topological space
 
+
+```javascript
+export const fibonacciSlice = createSlice({
+    name: 'counter',
+    initialState: {
+        X: 'a',
+        Y: 'b',
+        Z: '',
+        S: 'Z',
+        V: '',
+    },
+    reducers: {
+        generate: (state) => {
+            switch (state.S) {
+                case 'X':
+                    state.X = state.Y + state.Z;
+                    state.S = 'Y';
+                    state.V = state.X;
+                    break;
+                case 'Y':
+                    state.Y = state.Z + state.X;
+                    state.S = 'Z';
+                    state.V = state.Y;
+                    break;
+                case 'Z':
+                    state.Z = state.X + state.Y;
+                    state.S = 'X';
+                    state.V = state.Z;
+                    break;
+            }
+        },
+    },
+})
+```
+
+fibonacci slice in redux, here the generator values and generator function is reduced to a single function, which could become too convoluted if it expands too much.
+
+I'm not sure if this can be applied generally. Will need to see
+
