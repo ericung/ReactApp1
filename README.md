@@ -48,6 +48,7 @@ regular functional programming functions can be found in intermediate state data
 
 find and filter are quotient operations on a topological space
 
+<<<<<<< HEAD
 Three.js and React.js Example Component
 
 ```
@@ -108,3 +109,46 @@ export default class MainScene extends React.Component {
 
 div refs so that the scene can be rerendered
 [React Ref](https://react.dev/learn/manipulating-the-dom-with-refs)
+=======
+
+```javascript
+export const fibonacciSlice = createSlice({
+    name: 'counter',
+    initialState: {
+        X: 'a',
+        Y: 'b',
+        Z: '',
+        S: 'Z',
+        V: '',
+    },
+    reducers: {
+        generate: (state) => {
+            switch (state.S) {
+                case 'X':
+                    state.X = state.Y + state.Z;
+                    state.S = 'Y';
+                    state.V = state.X;
+                    break;
+                case 'Y':
+                    state.Y = state.Z + state.X;
+                    state.S = 'Z';
+                    state.V = state.Y;
+                    break;
+                case 'Z':
+                    state.Z = state.X + state.Y;
+                    state.S = 'X';
+                    state.V = state.Z;
+                    break;
+            }
+        },
+    },
+})
+```
+
+fibonacci slice in redux, here the generator values and generator function is reduced to a single function, which could become too convoluted if it expands too much.
+
+I'm not sure if this can be applied generally. Will need to see.
+
+A transduction is moving a generalized sequential mapping around. 
+
+>>>>>>> 90d3e45d92098a887b3333a11f2f672549a7cdd7
