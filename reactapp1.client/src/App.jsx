@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useImmer } from 'use-immer';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux'
-import { generate } from './FibonacciSlice'
+import { useSelector, useDispatch } from 'react-redux';
+import { generate } from './FibonacciSlice';
 import './App.css';
+import Canvas from './Canvas';
 
 export function FibonacciRedux() {
     const value = useSelector((state) => state.fibonacci.V)
@@ -223,6 +224,7 @@ function App() {
             <FibonacciState />
             <EditProfile />
             <ProfileLine />
+            <Canvas />
             <h1 id="tabelLabel">Student student</h1>
             <p>This component demonstrates fetching data from the server.</p>
             {contents}
