@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { generate } from './FibonacciSlice';
 import './App.css';
 import Canvas from './Canvas';
+import SignalR from './SignalR';
 
 export function FibonacciRedux() {
     const value = useSelector((state) => state.fibonacci.V)
@@ -220,6 +221,7 @@ function App() {
 
     return (
         <div>
+            <SignalR />
             <FibonacciRedux />
             <FibonacciState />
             <EditProfile />
