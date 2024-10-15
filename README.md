@@ -88,7 +88,7 @@ fibonacci slice in redux, here the generator values and generator function is re
 
 Three.js and React.js Example Component
 
-```
+```javascript
 export default class MainScene extends React.Component {
     componentDidMount() {
         this.initScene();
@@ -146,3 +146,37 @@ export default class MainScene extends React.Component {
 
 div refs so that the scene can be rerendered
 [React Ref](https://react.dev/learn/manipulating-the-dom-with-refs)
+
+SignalR
+
+with some backend modifications, signalr can be added to a react app on the client side
+
+```javascript
+const URL = "https://localhost:7260/messageHub";
+
+const SignalR = () => {
+    const [connection, setConnection] = useState(null);
+
+    useEffect(() => {
+        const newConnection = new signalR.HubConnectionBuilder()
+            .withUrl(URL)
+            .build();
+
+        setConnection(newConnection);
+    }, []);
+
+    useEffect(() => {
+        if (connection) {
+            connection.start().then(() => {
+                console.log("Connected!");
+            }).catch(err => console.error("Connection failed: ", err));
+        }
+    }, [connection]);
+    
+    return () => {
+        <div>
+            <h1>SignalR Connected</h1>
+        </div>
+    };
+}
+```
