@@ -1,3 +1,40 @@
+Here are some modern design patterns commonly used in MVC with .NET 9:
+
+### 1. **Repository Pattern**
+   - Abstracts data access logic, making it easier to test and maintain.
+   - Works well with Dependency Injection.
+
+### 2. **Unit of Work Pattern**
+   - Manages transactions across multiple repositories, ensuring consistency.
+
+### 3. **CQRS (Command Query Responsibility Segregation)**
+   - Separates read and write operations for better scalability and performance.
+
+### 4. **Mediator Pattern**
+   - Centralizes communication between components, reducing dependencies.
+
+### 5. **Decorator Pattern**
+   - Adds functionality to objects dynamically without altering their structure.
+
+### 6. **Factory Pattern**
+   - Creates objects without specifying the exact class, promoting flexibility.
+
+### 7. **Observer Pattern**
+   - Enables components to react to changes in other components, useful for event-driven systems.
+
+### 8. **Dependency Injection**
+   - Promotes loose coupling by injecting dependencies rather than hardcoding them.
+
+### 9. **Service Layer Pattern**
+   - Encapsulates business logic, keeping controllers lean and focused.
+
+### 10. **Builder Pattern**
+   - Constructs complex objects step-by-step, improving readability and maintainability.
+
+These patterns can help you build scalable, maintainable, and testable applications. If you'd like, I can dive deeper into any of these or suggest resources to explore them further!
+
+
+
 Certainly! Here's a set of example codes showcasing how each design pattern works in a .NET 9 MVC application:
 
 ---
